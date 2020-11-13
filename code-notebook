@@ -35,13 +35,6 @@
   },
   {
    "source": [
-    "IMPORT LIBRARIES"
-   ],
-   "cell_type": "markdown",
-   "metadata": {}
-  },
-  {
-   "source": [
     "# Loading necessary libraries and Importing datasets"
    ],
    "cell_type": "markdown",
@@ -49,7 +42,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": 3,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -61,7 +54,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
+   "execution_count": 4,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -71,7 +64,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
+   "execution_count": 5,
    "metadata": {},
    "outputs": [
     {
@@ -102,7 +95,7 @@
       "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>id</th>\n      <th>tittle</th>\n      <th>cast</th>\n      <th>crew</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>19995</td>\n      <td>Avatar</td>\n      <td>[{\"cast_id\": 242, \"character\": \"Jake Sully\", \"...</td>\n      <td>[{\"credit_id\": \"52fe48009251416c750aca23\", \"de...</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>285</td>\n      <td>Pirates of the Caribbean: At World's End</td>\n      <td>[{\"cast_id\": 4, \"character\": \"Captain Jack Spa...</td>\n      <td>[{\"credit_id\": \"52fe4232c3a36847f800b579\", \"de...</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>206647</td>\n      <td>Spectre</td>\n      <td>[{\"cast_id\": 1, \"character\": \"James Bond\", \"cr...</td>\n      <td>[{\"credit_id\": \"54805967c3a36829b5002c41\", \"de...</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>49026</td>\n      <td>The Dark Knight Rises</td>\n      <td>[{\"cast_id\": 2, \"character\": \"Bruce Wayne / Ba...</td>\n      <td>[{\"credit_id\": \"52fe4781c3a36847f81398c3\", \"de...</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>49529</td>\n      <td>John Carter</td>\n      <td>[{\"cast_id\": 5, \"character\": \"John Carter\", \"c...</td>\n      <td>[{\"credit_id\": \"52fe479ac3a36847f813eaa3\", \"de...</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
      },
      "metadata": {},
-     "execution_count": 13
+     "execution_count": 5
     }
    ],
    "source": [
@@ -112,7 +105,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
+   "execution_count": 6,
    "metadata": {},
    "outputs": [
     {
@@ -154,26 +147,19 @@
        "3  Following the death of District Attorney Harve...  112.312950   \n",
        "4  John Carter is a war-weary, former military ca...   43.926995   \n",
        "\n",
-       "                                production_companies  \\\n",
-       "0  [{\"name\": \"Ingenious Film Partners\", \"id\": 289...   \n",
-       "1  [{\"name\": \"Walt Disney Pictures\", \"id\": 2}, {\"...   \n",
-       "2  [{\"name\": \"Columbia Pictures\", \"id\": 5}, {\"nam...   \n",
-       "3  [{\"name\": \"Legendary Pictures\", \"id\": 923}, {\"...   \n",
-       "4        [{\"name\": \"Walt Disney Pictures\", \"id\": 2}]   \n",
+       "                                production_companies  ... runtime  \\\n",
+       "0  [{\"name\": \"Ingenious Film Partners\", \"id\": 289...  ...   162.0   \n",
+       "1  [{\"name\": \"Walt Disney Pictures\", \"id\": 2}, {\"...  ...   169.0   \n",
+       "2  [{\"name\": \"Columbia Pictures\", \"id\": 5}, {\"nam...  ...   148.0   \n",
+       "3  [{\"name\": \"Legendary Pictures\", \"id\": 923}, {\"...  ...   165.0   \n",
+       "4        [{\"name\": \"Walt Disney Pictures\", \"id\": 2}]  ...   132.0   \n",
        "\n",
-       "                                production_countries release_date     revenue  \\\n",
-       "0  [{\"iso_3166_1\": \"US\", \"name\": \"United States o...   2009-12-10  2787965087   \n",
-       "1  [{\"iso_3166_1\": \"US\", \"name\": \"United States o...   2007-05-19   961000000   \n",
-       "2  [{\"iso_3166_1\": \"GB\", \"name\": \"United Kingdom\"...   2015-10-26   880674609   \n",
-       "3  [{\"iso_3166_1\": \"US\", \"name\": \"United States o...   2012-07-16  1084939099   \n",
-       "4  [{\"iso_3166_1\": \"US\", \"name\": \"United States o...   2012-03-07   284139100   \n",
-       "\n",
-       "   runtime                                   spoken_languages    status  \\\n",
-       "0    162.0  [{\"iso_639_1\": \"en\", \"name\": \"English\"}, {\"iso...  Released   \n",
-       "1    169.0           [{\"iso_639_1\": \"en\", \"name\": \"English\"}]  Released   \n",
-       "2    148.0  [{\"iso_639_1\": \"fr\", \"name\": \"Fran\\u00e7ais\"},...  Released   \n",
-       "3    165.0           [{\"iso_639_1\": \"en\", \"name\": \"English\"}]  Released   \n",
-       "4    132.0           [{\"iso_639_1\": \"en\", \"name\": \"English\"}]  Released   \n",
+       "                                    spoken_languages    status  \\\n",
+       "0  [{\"iso_639_1\": \"en\", \"name\": \"English\"}, {\"iso...  Released   \n",
+       "1           [{\"iso_639_1\": \"en\", \"name\": \"English\"}]  Released   \n",
+       "2  [{\"iso_639_1\": \"fr\", \"name\": \"Fran\\u00e7ais\"},...  Released   \n",
+       "3           [{\"iso_639_1\": \"en\", \"name\": \"English\"}]  Released   \n",
+       "4           [{\"iso_639_1\": \"en\", \"name\": \"English\"}]  Released   \n",
        "\n",
        "                                          tagline  \\\n",
        "0                     Enter the World of Pandora.   \n",
@@ -182,12 +168,12 @@
        "3                                 The Legend Ends   \n",
        "4            Lost in our world, found in another.   \n",
        "\n",
-       "                                      title  vote_average  vote_count  \\\n",
-       "0                                    Avatar           7.2       11800   \n",
-       "1  Pirates of the Caribbean: At World's End           6.9        4500   \n",
-       "2                                   Spectre           6.3        4466   \n",
-       "3                     The Dark Knight Rises           7.6        9106   \n",
-       "4                               John Carter           6.1        2124   \n",
+       "                                      title vote_average vote_count  \\\n",
+       "0                                    Avatar          7.2      11800   \n",
+       "1  Pirates of the Caribbean: At World's End          6.9       4500   \n",
+       "2                                   Spectre          6.3       4466   \n",
+       "3                     The Dark Knight Rises          7.6       9106   \n",
+       "4                               John Carter          6.1       2124   \n",
        "\n",
        "                                     tittle  \\\n",
        "0                                    Avatar   \n",
@@ -208,17 +194,185 @@
        "1  [{\"credit_id\": \"52fe4232c3a36847f800b579\", \"de...  \n",
        "2  [{\"credit_id\": \"54805967c3a36829b5002c41\", \"de...  \n",
        "3  [{\"credit_id\": \"52fe4781c3a36847f81398c3\", \"de...  \n",
-       "4  [{\"credit_id\": \"52fe479ac3a36847f813eaa3\", \"de...  "
+       "4  [{\"credit_id\": \"52fe479ac3a36847f813eaa3\", \"de...  \n",
+       "\n",
+       "[5 rows x 23 columns]"
       ],
-      "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>budget</th>\n      <th>genres</th>\n      <th>homepage</th>\n      <th>id</th>\n      <th>keywords</th>\n      <th>original_language</th>\n      <th>original_title</th>\n      <th>overview</th>\n      <th>popularity</th>\n      <th>production_companies</th>\n      <th>production_countries</th>\n      <th>release_date</th>\n      <th>revenue</th>\n      <th>runtime</th>\n      <th>spoken_languages</th>\n      <th>status</th>\n      <th>tagline</th>\n      <th>title</th>\n      <th>vote_average</th>\n      <th>vote_count</th>\n      <th>tittle</th>\n      <th>cast</th>\n      <th>crew</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>237000000</td>\n      <td>[{\"id\": 28, \"name\": \"Action\"}, {\"id\": 12, \"nam...</td>\n      <td>http://www.avatarmovie.com/</td>\n      <td>19995</td>\n      <td>[{\"id\": 1463, \"name\": \"culture clash\"}, {\"id\":...</td>\n      <td>en</td>\n      <td>Avatar</td>\n      <td>In the 22nd century, a paraplegic Marine is di...</td>\n      <td>150.437577</td>\n      <td>[{\"name\": \"Ingenious Film Partners\", \"id\": 289...</td>\n      <td>[{\"iso_3166_1\": \"US\", \"name\": \"United States o...</td>\n      <td>2009-12-10</td>\n      <td>2787965087</td>\n      <td>162.0</td>\n      <td>[{\"iso_639_1\": \"en\", \"name\": \"English\"}, {\"iso...</td>\n      <td>Released</td>\n      <td>Enter the World of Pandora.</td>\n      <td>Avatar</td>\n      <td>7.2</td>\n      <td>11800</td>\n      <td>Avatar</td>\n      <td>[{\"cast_id\": 242, \"character\": \"Jake Sully\", \"...</td>\n      <td>[{\"credit_id\": \"52fe48009251416c750aca23\", \"de...</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>300000000</td>\n      <td>[{\"id\": 12, \"name\": \"Adventure\"}, {\"id\": 14, \"...</td>\n      <td>http://disney.go.com/disneypictures/pirates/</td>\n      <td>285</td>\n      <td>[{\"id\": 270, \"name\": \"ocean\"}, {\"id\": 726, \"na...</td>\n      <td>en</td>\n      <td>Pirates of the Caribbean: At World's End</td>\n      <td>Captain Barbossa, long believed to be dead, ha...</td>\n      <td>139.082615</td>\n      <td>[{\"name\": \"Walt Disney Pictures\", \"id\": 2}, {\"...</td>\n      <td>[{\"iso_3166_1\": \"US\", \"name\": \"United States o...</td>\n      <td>2007-05-19</td>\n      <td>961000000</td>\n      <td>169.0</td>\n      <td>[{\"iso_639_1\": \"en\", \"name\": \"English\"}]</td>\n      <td>Released</td>\n      <td>At the end of the world, the adventure begins.</td>\n      <td>Pirates of the Caribbean: At World's End</td>\n      <td>6.9</td>\n      <td>4500</td>\n      <td>Pirates of the Caribbean: At World's End</td>\n      <td>[{\"cast_id\": 4, \"character\": \"Captain Jack Spa...</td>\n      <td>[{\"credit_id\": \"52fe4232c3a36847f800b579\", \"de...</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>245000000</td>\n      <td>[{\"id\": 28, \"name\": \"Action\"}, {\"id\": 12, \"nam...</td>\n      <td>http://www.sonypictures.com/movies/spectre/</td>\n      <td>206647</td>\n      <td>[{\"id\": 470, \"name\": \"spy\"}, {\"id\": 818, \"name...</td>\n      <td>en</td>\n      <td>Spectre</td>\n      <td>A cryptic message from Bond’s past sends him o...</td>\n      <td>107.376788</td>\n      <td>[{\"name\": \"Columbia Pictures\", \"id\": 5}, {\"nam...</td>\n      <td>[{\"iso_3166_1\": \"GB\", \"name\": \"United Kingdom\"...</td>\n      <td>2015-10-26</td>\n      <td>880674609</td>\n      <td>148.0</td>\n      <td>[{\"iso_639_1\": \"fr\", \"name\": \"Fran\\u00e7ais\"},...</td>\n      <td>Released</td>\n      <td>A Plan No One Escapes</td>\n      <td>Spectre</td>\n      <td>6.3</td>\n      <td>4466</td>\n      <td>Spectre</td>\n      <td>[{\"cast_id\": 1, \"character\": \"James Bond\", \"cr...</td>\n      <td>[{\"credit_id\": \"54805967c3a36829b5002c41\", \"de...</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>250000000</td>\n      <td>[{\"id\": 28, \"name\": \"Action\"}, {\"id\": 80, \"nam...</td>\n      <td>http://www.thedarkknightrises.com/</td>\n      <td>49026</td>\n      <td>[{\"id\": 849, \"name\": \"dc comics\"}, {\"id\": 853,...</td>\n      <td>en</td>\n      <td>The Dark Knight Rises</td>\n      <td>Following the death of District Attorney Harve...</td>\n      <td>112.312950</td>\n      <td>[{\"name\": \"Legendary Pictures\", \"id\": 923}, {\"...</td>\n      <td>[{\"iso_3166_1\": \"US\", \"name\": \"United States o...</td>\n      <td>2012-07-16</td>\n      <td>1084939099</td>\n      <td>165.0</td>\n      <td>[{\"iso_639_1\": \"en\", \"name\": \"English\"}]</td>\n      <td>Released</td>\n      <td>The Legend Ends</td>\n      <td>The Dark Knight Rises</td>\n      <td>7.6</td>\n      <td>9106</td>\n      <td>The Dark Knight Rises</td>\n      <td>[{\"cast_id\": 2, \"character\": \"Bruce Wayne / Ba...</td>\n      <td>[{\"credit_id\": \"52fe4781c3a36847f81398c3\", \"de...</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>260000000</td>\n      <td>[{\"id\": 28, \"name\": \"Action\"}, {\"id\": 12, \"nam...</td>\n      <td>http://movies.disney.com/john-carter</td>\n      <td>49529</td>\n      <td>[{\"id\": 818, \"name\": \"based on novel\"}, {\"id\":...</td>\n      <td>en</td>\n      <td>John Carter</td>\n      <td>John Carter is a war-weary, former military ca...</td>\n      <td>43.926995</td>\n      <td>[{\"name\": \"Walt Disney Pictures\", \"id\": 2}]</td>\n      <td>[{\"iso_3166_1\": \"US\", \"name\": \"United States o...</td>\n      <td>2012-03-07</td>\n      <td>284139100</td>\n      <td>132.0</td>\n      <td>[{\"iso_639_1\": \"en\", \"name\": \"English\"}]</td>\n      <td>Released</td>\n      <td>Lost in our world, found in another.</td>\n      <td>John Carter</td>\n      <td>6.1</td>\n      <td>2124</td>\n      <td>John Carter</td>\n      <td>[{\"cast_id\": 5, \"character\": \"John Carter\", \"c...</td>\n      <td>[{\"credit_id\": \"52fe479ac3a36847f813eaa3\", \"de...</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>budget</th>\n      <th>genres</th>\n      <th>homepage</th>\n      <th>id</th>\n      <th>keywords</th>\n      <th>original_language</th>\n      <th>original_title</th>\n      <th>overview</th>\n      <th>popularity</th>\n      <th>production_companies</th>\n      <th>...</th>\n      <th>runtime</th>\n      <th>spoken_languages</th>\n      <th>status</th>\n      <th>tagline</th>\n      <th>title</th>\n      <th>vote_average</th>\n      <th>vote_count</th>\n      <th>tittle</th>\n      <th>cast</th>\n      <th>crew</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>237000000</td>\n      <td>[{\"id\": 28, \"name\": \"Action\"}, {\"id\": 12, \"nam...</td>\n      <td>http://www.avatarmovie.com/</td>\n      <td>19995</td>\n      <td>[{\"id\": 1463, \"name\": \"culture clash\"}, {\"id\":...</td>\n      <td>en</td>\n      <td>Avatar</td>\n      <td>In the 22nd century, a paraplegic Marine is di...</td>\n      <td>150.437577</td>\n      <td>[{\"name\": \"Ingenious Film Partners\", \"id\": 289...</td>\n      <td>...</td>\n      <td>162.0</td>\n      <td>[{\"iso_639_1\": \"en\", \"name\": \"English\"}, {\"iso...</td>\n      <td>Released</td>\n      <td>Enter the World of Pandora.</td>\n      <td>Avatar</td>\n      <td>7.2</td>\n      <td>11800</td>\n      <td>Avatar</td>\n      <td>[{\"cast_id\": 242, \"character\": \"Jake Sully\", \"...</td>\n      <td>[{\"credit_id\": \"52fe48009251416c750aca23\", \"de...</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>300000000</td>\n      <td>[{\"id\": 12, \"name\": \"Adventure\"}, {\"id\": 14, \"...</td>\n      <td>http://disney.go.com/disneypictures/pirates/</td>\n      <td>285</td>\n      <td>[{\"id\": 270, \"name\": \"ocean\"}, {\"id\": 726, \"na...</td>\n      <td>en</td>\n      <td>Pirates of the Caribbean: At World's End</td>\n      <td>Captain Barbossa, long believed to be dead, ha...</td>\n      <td>139.082615</td>\n      <td>[{\"name\": \"Walt Disney Pictures\", \"id\": 2}, {\"...</td>\n      <td>...</td>\n      <td>169.0</td>\n      <td>[{\"iso_639_1\": \"en\", \"name\": \"English\"}]</td>\n      <td>Released</td>\n      <td>At the end of the world, the adventure begins.</td>\n      <td>Pirates of the Caribbean: At World's End</td>\n      <td>6.9</td>\n      <td>4500</td>\n      <td>Pirates of the Caribbean: At World's End</td>\n      <td>[{\"cast_id\": 4, \"character\": \"Captain Jack Spa...</td>\n      <td>[{\"credit_id\": \"52fe4232c3a36847f800b579\", \"de...</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>245000000</td>\n      <td>[{\"id\": 28, \"name\": \"Action\"}, {\"id\": 12, \"nam...</td>\n      <td>http://www.sonypictures.com/movies/spectre/</td>\n      <td>206647</td>\n      <td>[{\"id\": 470, \"name\": \"spy\"}, {\"id\": 818, \"name...</td>\n      <td>en</td>\n      <td>Spectre</td>\n      <td>A cryptic message from Bond’s past sends him o...</td>\n      <td>107.376788</td>\n      <td>[{\"name\": \"Columbia Pictures\", \"id\": 5}, {\"nam...</td>\n      <td>...</td>\n      <td>148.0</td>\n      <td>[{\"iso_639_1\": \"fr\", \"name\": \"Fran\\u00e7ais\"},...</td>\n      <td>Released</td>\n      <td>A Plan No One Escapes</td>\n      <td>Spectre</td>\n      <td>6.3</td>\n      <td>4466</td>\n      <td>Spectre</td>\n      <td>[{\"cast_id\": 1, \"character\": \"James Bond\", \"cr...</td>\n      <td>[{\"credit_id\": \"54805967c3a36829b5002c41\", \"de...</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>250000000</td>\n      <td>[{\"id\": 28, \"name\": \"Action\"}, {\"id\": 80, \"nam...</td>\n      <td>http://www.thedarkknightrises.com/</td>\n      <td>49026</td>\n      <td>[{\"id\": 849, \"name\": \"dc comics\"}, {\"id\": 853,...</td>\n      <td>en</td>\n      <td>The Dark Knight Rises</td>\n      <td>Following the death of District Attorney Harve...</td>\n      <td>112.312950</td>\n      <td>[{\"name\": \"Legendary Pictures\", \"id\": 923}, {\"...</td>\n      <td>...</td>\n      <td>165.0</td>\n      <td>[{\"iso_639_1\": \"en\", \"name\": \"English\"}]</td>\n      <td>Released</td>\n      <td>The Legend Ends</td>\n      <td>The Dark Knight Rises</td>\n      <td>7.6</td>\n      <td>9106</td>\n      <td>The Dark Knight Rises</td>\n      <td>[{\"cast_id\": 2, \"character\": \"Bruce Wayne / Ba...</td>\n      <td>[{\"credit_id\": \"52fe4781c3a36847f81398c3\", \"de...</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>260000000</td>\n      <td>[{\"id\": 28, \"name\": \"Action\"}, {\"id\": 12, \"nam...</td>\n      <td>http://movies.disney.com/john-carter</td>\n      <td>49529</td>\n      <td>[{\"id\": 818, \"name\": \"based on novel\"}, {\"id\":...</td>\n      <td>en</td>\n      <td>John Carter</td>\n      <td>John Carter is a war-weary, former military ca...</td>\n      <td>43.926995</td>\n      <td>[{\"name\": \"Walt Disney Pictures\", \"id\": 2}]</td>\n      <td>...</td>\n      <td>132.0</td>\n      <td>[{\"iso_639_1\": \"en\", \"name\": \"English\"}]</td>\n      <td>Released</td>\n      <td>Lost in our world, found in another.</td>\n      <td>John Carter</td>\n      <td>6.1</td>\n      <td>2124</td>\n      <td>John Carter</td>\n      <td>[{\"cast_id\": 5, \"character\": \"John Carter\", \"c...</td>\n      <td>[{\"credit_id\": \"52fe479ac3a36847f813eaa3\", \"de...</td>\n    </tr>\n  </tbody>\n</table>\n<p>5 rows × 23 columns</p>\n</div>"
      },
      "metadata": {},
-     "execution_count": 14
+     "execution_count": 6
     }
    ],
    "source": [
     "#Just a look at the data\n",
     "df2.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Preprocessing"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "execute_result",
+     "data": {
+      "text/plain": [
+       "                   id    tittle  cast  crew\n",
+       "count     4803.000000      4803  4803  4803\n",
+       "unique            NaN      4800  4761  4776\n",
+       "top               NaN  The Host    []    []\n",
+       "freq              NaN         2    43    28\n",
+       "mean     57165.484281       NaN   NaN   NaN\n",
+       "std      88694.614033       NaN   NaN   NaN\n",
+       "min          5.000000       NaN   NaN   NaN\n",
+       "25%       9014.500000       NaN   NaN   NaN\n",
+       "50%      14629.000000       NaN   NaN   NaN\n",
+       "75%      58610.500000       NaN   NaN   NaN\n",
+       "max     459488.000000       NaN   NaN   NaN"
+      ],
+      "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>id</th>\n      <th>tittle</th>\n      <th>cast</th>\n      <th>crew</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>count</th>\n      <td>4803.000000</td>\n      <td>4803</td>\n      <td>4803</td>\n      <td>4803</td>\n    </tr>\n    <tr>\n      <th>unique</th>\n      <td>NaN</td>\n      <td>4800</td>\n      <td>4761</td>\n      <td>4776</td>\n    </tr>\n    <tr>\n      <th>top</th>\n      <td>NaN</td>\n      <td>The Host</td>\n      <td>[]</td>\n      <td>[]</td>\n    </tr>\n    <tr>\n      <th>freq</th>\n      <td>NaN</td>\n      <td>2</td>\n      <td>43</td>\n      <td>28</td>\n    </tr>\n    <tr>\n      <th>mean</th>\n      <td>57165.484281</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n    <tr>\n      <th>std</th>\n      <td>88694.614033</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n    <tr>\n      <th>min</th>\n      <td>5.000000</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n    <tr>\n      <th>25%</th>\n      <td>9014.500000</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n    <tr>\n      <th>50%</th>\n      <td>14629.000000</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n    <tr>\n      <th>75%</th>\n      <td>58610.500000</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n    <tr>\n      <th>max</th>\n      <td>459488.000000</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+     },
+     "metadata": {},
+     "execution_count": 8
+    }
+   ],
+   "source": [
+    "df1.describe(include = \"all\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "execute_result",
+     "data": {
+      "text/plain": [
+       "              budget                         genres  \\\n",
+       "count   4.803000e+03                           4803   \n",
+       "unique           NaN                           1175   \n",
+       "top              NaN  [{\"id\": 18, \"name\": \"Drama\"}]   \n",
+       "freq             NaN                            370   \n",
+       "mean    2.904504e+07                            NaN   \n",
+       "std     4.072239e+07                            NaN   \n",
+       "min     0.000000e+00                            NaN   \n",
+       "25%     7.900000e+05                            NaN   \n",
+       "50%     1.500000e+07                            NaN   \n",
+       "75%     4.000000e+07                            NaN   \n",
+       "max     3.800000e+08                            NaN   \n",
+       "\n",
+       "                                 homepage             id keywords  \\\n",
+       "count                                1712    4803.000000     4803   \n",
+       "unique                               1691            NaN     4222   \n",
+       "top     http://www.missionimpossible.com/            NaN       []   \n",
+       "freq                                    4            NaN      412   \n",
+       "mean                                  NaN   57165.484281      NaN   \n",
+       "std                                   NaN   88694.614033      NaN   \n",
+       "min                                   NaN       5.000000      NaN   \n",
+       "25%                                   NaN    9014.500000      NaN   \n",
+       "50%                                   NaN   14629.000000      NaN   \n",
+       "75%                                   NaN   58610.500000      NaN   \n",
+       "max                                   NaN  459488.000000      NaN   \n",
+       "\n",
+       "       original_language original_title  \\\n",
+       "count               4803           4803   \n",
+       "unique                37           4801   \n",
+       "top                   en         Batman   \n",
+       "freq                4505              2   \n",
+       "mean                 NaN            NaN   \n",
+       "std                  NaN            NaN   \n",
+       "min                  NaN            NaN   \n",
+       "25%                  NaN            NaN   \n",
+       "50%                  NaN            NaN   \n",
+       "75%                  NaN            NaN   \n",
+       "max                  NaN            NaN   \n",
+       "\n",
+       "                                                 overview   popularity  \\\n",
+       "count                                                4800  4803.000000   \n",
+       "unique                                               4800          NaN   \n",
+       "top     Beatrice Prior must confront her inner demons ...          NaN   \n",
+       "freq                                                    1          NaN   \n",
+       "mean                                                  NaN    21.492301   \n",
+       "std                                                   NaN    31.816650   \n",
+       "min                                                   NaN     0.000000   \n",
+       "25%                                                   NaN     4.668070   \n",
+       "50%                                                   NaN    12.921594   \n",
+       "75%                                                   NaN    28.313505   \n",
+       "max                                                   NaN   875.581305   \n",
+       "\n",
+       "       production_companies  ...      runtime  \\\n",
+       "count                  4803  ...  4801.000000   \n",
+       "unique                 3697  ...          NaN   \n",
+       "top                      []  ...          NaN   \n",
+       "freq                    351  ...          NaN   \n",
+       "mean                    NaN  ...   106.875859   \n",
+       "std                     NaN  ...    22.611935   \n",
+       "min                     NaN  ...     0.000000   \n",
+       "25%                     NaN  ...    94.000000   \n",
+       "50%                     NaN  ...   103.000000   \n",
+       "75%                     NaN  ...   118.000000   \n",
+       "max                     NaN  ...   338.000000   \n",
+       "\n",
+       "                                spoken_languages    status  \\\n",
+       "count                                       4803      4803   \n",
+       "unique                                       544         3   \n",
+       "top     [{\"iso_639_1\": \"en\", \"name\": \"English\"}]  Released   \n",
+       "freq                                        3171      4795   \n",
+       "mean                                         NaN       NaN   \n",
+       "std                                          NaN       NaN   \n",
+       "min                                          NaN       NaN   \n",
+       "25%                                          NaN       NaN   \n",
+       "50%                                          NaN       NaN   \n",
+       "75%                                          NaN       NaN   \n",
+       "max                                          NaN       NaN   \n",
+       "\n",
+       "                       tagline     title vote_average    vote_count    tittle  \\\n",
+       "count                     3959      4803  4803.000000   4803.000000      4803   \n",
+       "unique                    3944      4800          NaN           NaN      4800   \n",
+       "top     Based on a true story.  The Host          NaN           NaN  The Host   \n",
+       "freq                         3         2          NaN           NaN         2   \n",
+       "mean                       NaN       NaN     6.092172    690.217989       NaN   \n",
+       "std                        NaN       NaN     1.194612   1234.585891       NaN   \n",
+       "min                        NaN       NaN     0.000000      0.000000       NaN   \n",
+       "25%                        NaN       NaN     5.600000     54.000000       NaN   \n",
+       "50%                        NaN       NaN     6.200000    235.000000       NaN   \n",
+       "75%                        NaN       NaN     6.800000    737.000000       NaN   \n",
+       "max                        NaN       NaN    10.000000  13752.000000       NaN   \n",
+       "\n",
+       "        cast  crew  \n",
+       "count   4803  4803  \n",
+       "unique  4761  4776  \n",
+       "top       []    []  \n",
+       "freq      43    28  \n",
+       "mean     NaN   NaN  \n",
+       "std      NaN   NaN  \n",
+       "min      NaN   NaN  \n",
+       "25%      NaN   NaN  \n",
+       "50%      NaN   NaN  \n",
+       "75%      NaN   NaN  \n",
+       "max      NaN   NaN  \n",
+       "\n",
+       "[11 rows x 23 columns]"
+      ],
+      "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>budget</th>\n      <th>genres</th>\n      <th>homepage</th>\n      <th>id</th>\n      <th>keywords</th>\n      <th>original_language</th>\n      <th>original_title</th>\n      <th>overview</th>\n      <th>popularity</th>\n      <th>production_companies</th>\n      <th>...</th>\n      <th>runtime</th>\n      <th>spoken_languages</th>\n      <th>status</th>\n      <th>tagline</th>\n      <th>title</th>\n      <th>vote_average</th>\n      <th>vote_count</th>\n      <th>tittle</th>\n      <th>cast</th>\n      <th>crew</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>count</th>\n      <td>4.803000e+03</td>\n      <td>4803</td>\n      <td>1712</td>\n      <td>4803.000000</td>\n      <td>4803</td>\n      <td>4803</td>\n      <td>4803</td>\n      <td>4800</td>\n      <td>4803.000000</td>\n      <td>4803</td>\n      <td>...</td>\n      <td>4801.000000</td>\n      <td>4803</td>\n      <td>4803</td>\n      <td>3959</td>\n      <td>4803</td>\n      <td>4803.000000</td>\n      <td>4803.000000</td>\n      <td>4803</td>\n      <td>4803</td>\n      <td>4803</td>\n    </tr>\n    <tr>\n      <th>unique</th>\n      <td>NaN</td>\n      <td>1175</td>\n      <td>1691</td>\n      <td>NaN</td>\n      <td>4222</td>\n      <td>37</td>\n      <td>4801</td>\n      <td>4800</td>\n      <td>NaN</td>\n      <td>3697</td>\n      <td>...</td>\n      <td>NaN</td>\n      <td>544</td>\n      <td>3</td>\n      <td>3944</td>\n      <td>4800</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>4800</td>\n      <td>4761</td>\n      <td>4776</td>\n    </tr>\n    <tr>\n      <th>top</th>\n      <td>NaN</td>\n      <td>[{\"id\": 18, \"name\": \"Drama\"}]</td>\n      <td>http://www.missionimpossible.com/</td>\n      <td>NaN</td>\n      <td>[]</td>\n      <td>en</td>\n      <td>Batman</td>\n      <td>Beatrice Prior must confront her inner demons ...</td>\n      <td>NaN</td>\n      <td>[]</td>\n      <td>...</td>\n      <td>NaN</td>\n      <td>[{\"iso_639_1\": \"en\", \"name\": \"English\"}]</td>\n      <td>Released</td>\n      <td>Based on a true story.</td>\n      <td>The Host</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>The Host</td>\n      <td>[]</td>\n      <td>[]</td>\n    </tr>\n    <tr>\n      <th>freq</th>\n      <td>NaN</td>\n      <td>370</td>\n      <td>4</td>\n      <td>NaN</td>\n      <td>412</td>\n      <td>4505</td>\n      <td>2</td>\n      <td>1</td>\n      <td>NaN</td>\n      <td>351</td>\n      <td>...</td>\n      <td>NaN</td>\n      <td>3171</td>\n      <td>4795</td>\n      <td>3</td>\n      <td>2</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>2</td>\n      <td>43</td>\n      <td>28</td>\n    </tr>\n    <tr>\n      <th>mean</th>\n      <td>2.904504e+07</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>57165.484281</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>21.492301</td>\n      <td>NaN</td>\n      <td>...</td>\n      <td>106.875859</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>6.092172</td>\n      <td>690.217989</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n    <tr>\n      <th>std</th>\n      <td>4.072239e+07</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>88694.614033</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>31.816650</td>\n      <td>NaN</td>\n      <td>...</td>\n      <td>22.611935</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>1.194612</td>\n      <td>1234.585891</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n    <tr>\n      <th>min</th>\n      <td>0.000000e+00</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>5.000000</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>0.000000</td>\n      <td>NaN</td>\n      <td>...</td>\n      <td>0.000000</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>0.000000</td>\n      <td>0.000000</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n    <tr>\n      <th>25%</th>\n      <td>7.900000e+05</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>9014.500000</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>4.668070</td>\n      <td>NaN</td>\n      <td>...</td>\n      <td>94.000000</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>5.600000</td>\n      <td>54.000000</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n    <tr>\n      <th>50%</th>\n      <td>1.500000e+07</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>14629.000000</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>12.921594</td>\n      <td>NaN</td>\n      <td>...</td>\n      <td>103.000000</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>6.200000</td>\n      <td>235.000000</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n    <tr>\n      <th>75%</th>\n      <td>4.000000e+07</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>58610.500000</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>28.313505</td>\n      <td>NaN</td>\n      <td>...</td>\n      <td>118.000000</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>6.800000</td>\n      <td>737.000000</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n    <tr>\n      <th>max</th>\n      <td>3.800000e+08</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>459488.000000</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>875.581305</td>\n      <td>NaN</td>\n      <td>...</td>\n      <td>338.000000</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>10.000000</td>\n      <td>13752.000000</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n  </tbody>\n</table>\n<p>11 rows × 23 columns</p>\n</div>"
+     },
+     "metadata": {},
+     "execution_count": 9
+    }
+   ],
+   "source": [
+    "df2.describe(include = \"all\")"
    ]
   },
   {
